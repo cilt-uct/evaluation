@@ -107,7 +107,7 @@ public class SummaryProducer extends EvalCommonProducer implements DefaultView, 
 
         // local variables used in the render logic
         String currentUserId = commonLogic.getCurrentUserId();
-        //boolean userAdmin = commonLogic.isUserAdmin(currentUserId);
+        boolean userAdmin = commonLogic.isUserAdmin(currentUserId);
         boolean createTemplate = authoringService.canCreateTemplate(currentUserId);
         boolean beginEvaluation = evaluationService.canBeginEvaluation(currentUserId);
 
@@ -143,7 +143,7 @@ public class SummaryProducer extends EvalCommonProducer implements DefaultView, 
 
         // show evaluations that user is administering
         Boolean showAdministratingBox = (Boolean) settings.get(EvalSettings.ENABLE_ADMINISTRATING_BOX);
-        if(showAdministratingBox != null && showAdministratingBox == true) {
+        if(showAdministratingBox != null && showAdministratingBox == true && !userAdmin) {
             adminBoxRenderer.renderItem(tofill, "evalAdminBox");
         } //showAdministratingBox true
 
