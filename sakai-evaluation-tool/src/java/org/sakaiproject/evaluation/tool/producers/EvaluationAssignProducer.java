@@ -204,6 +204,15 @@ public class EvaluationAssignProducer extends EvalCommonProducer implements View
         UIMessage.make(tofill, "evalAssignInstructions", "evaluationassignconfirm.eval.assign.instructions",
                 new Object[] {df.format(evaluation.getStartDate())});
 
+        // information about the category selections
+        if(! hasInstructorQuestions && ! hasAssistantQuestions){
+            UIMessage.make(tofill, "assign-eval-instructions-selections", "assigneval.assign.selections.no.all");
+        }else if(! hasInstructorQuestions){
+            UIMessage.make(tofill, "assign-eval-instructions-selections", "assigneval.assign.selections.no.instructor");
+        }else if(! hasAssistantQuestions){
+            UIMessage.make(tofill, "assign-eval-instructions-selections", "assigneval.assign.selections.no.assistant");
+        }
+
         // display info about the evaluation (dates and what not)
         UIOutput.make(tofill, "startDate", dtf.format(evaluation.getStartDate()) );
 
