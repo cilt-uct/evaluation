@@ -58,15 +58,7 @@ public class TemplateVPInferrer implements EntityViewParamsInferrer {
 	public ViewParameters inferDefaultViewParameters(String reference) {
 		EntityReference ep = new EntityReference(reference);
 		Long templateId = new Long(ep.getId());
-		EvalTemplate template = authoringService.getTemplateById(templateId); 
-		if (EvalConstants.SHARING_PUBLIC.equals(template.getSharing()) ||
-				Boolean.TRUE.equals(template.getExpert())) {
-		} else {
-			String userId = commonLogic.getCurrentUserId();
-			if (!authoringService.canModifyTemplate(userId, templateId)) {
-				throw new SecurityException("You are not a maintainer on this template.");
-			}
-		}
+		// VULA-2307 Templates viewable by anyone
 		EvalViewParameters vp = new EvalViewParameters(PreviewEvalProducer.VIEW_ID, null, templateId);
 		vp.external = true;
 		return vp;
