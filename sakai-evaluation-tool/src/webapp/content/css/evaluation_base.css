@@ -1751,7 +1751,6 @@ table.tablesorter th.header.headerSortDown {
 .evaluation .item.blockItemGroup .questionCell {
   padding: 0.2em;
   height: 24px;
-  padding-bottom: 14px;
 }
 .evaluation .item.blockItemGroup .answerCell table {
   margin-right: 2px;
@@ -2156,6 +2155,11 @@ table tr.node td.node-3 {
 div.options-2 td.last.exclude {
 	width: 50% !important;
 }
+
+div.options-3 td.last.exclude {
+    width: 60% !important;
+}
+
 li.exportIndividual {
 	list-style-type: none;
 }
