@@ -115,3 +115,23 @@ background:#e3e3e3 none repeat scroll 0 0;
 border:1px solid #000;
 padding:4px;
 }
+
+.selectTable thead, .selectTable tbody, .selectTable tr {
+  display: block;
+}
+
+.selectTable td,
+.selectTable th {
+  display: inline-block;
+  width: 40%;
+}
+
+.selectTable tr > td:first-child,
+.selectTable tr > th:first-child {
+  width: 15%;
+}
+
+.selectTable tbody {
+  max-height: 12em;
+  overflow: auto;
+}
