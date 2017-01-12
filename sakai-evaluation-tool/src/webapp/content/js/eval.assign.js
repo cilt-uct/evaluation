@@ -217,14 +217,6 @@ $(document).ready(function() {
 
                     return false;
                 });
-                //Make list scrollable if hieght is more than 200px
-                var tableHolder = variables.get.documentFB.find('.selectTable:eq(0)');
-                tableHolder
-                        .css({
-                    'overflow': 'auto',
-                    'height': tableHolder.height() > 200 ? '205px' : (tableHolder.height() + 10) + "px"
-                }) ;
-                log("Formatting table holder hieght. Set height to:" + tableHolder.height());
         });
         $(document).bind('afterClose.facebox', function() {
             log("Running afterClose.facebox; initialising variables.initedafterRevealFacebox.");
