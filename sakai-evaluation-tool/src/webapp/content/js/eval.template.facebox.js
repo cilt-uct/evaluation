@@ -35,10 +35,6 @@ var evalTemplateFacebox = (function() {
                                          '<table width="820px"> ' +
                                          '<tbody> ' +
                                          '<tr>' +
-                                         '<td class="tl"/><td class="b"/><td class="tr"/>' +
-                                         '</tr>' +
-                                         '<tr>' +
-                                         '<td class="b"/>' +
                                          '<td class="body">' +
                                          '<div class="header breadCrumb" style="display:block">' +
                                          '<h2 id="titleHeader" class="titleHeader">&nbsp;</h2>' +
@@ -47,10 +43,6 @@ var evalTemplateFacebox = (function() {
                                          '<div class="content">' +
                                          '</div>' +
                                          '</td>' +
-                                         '<td class="b"/>' +
-                                         '</tr>' +
-                                         '<tr>' +
-                                         '<td class="bl"/><td class="b"/><td class="br"/>' +
                                          '</tr>' +
                                          '</tbody>' +
                                          '</table>' +
