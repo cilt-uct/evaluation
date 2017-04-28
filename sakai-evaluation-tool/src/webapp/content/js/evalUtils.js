@@ -436,4 +436,7 @@ $(document).ready(function() {
 	EvalSystem.windowsChromeStyleFixes();
 	EvalSystem.convertIndividualLinksToADropdown();
 	EvalSystem.listenForIndividualDropdown();
+	if ($("#rsf-messages\\:\\:error-messages\\:\\:").length && $("#rsf-messages\\:\\:info-messages\\:\\:").length) {
+		$("#rsf-messages\\:\\:error-messages\\:\\:").hide();
+	}
 });
