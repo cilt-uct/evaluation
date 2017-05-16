@@ -1699,6 +1699,8 @@ table.tablesorter th.header.headerSortDown {
 }
 .evaluation .item .title .label {
   margin-left: 40px;
+  white-space: normal;
+  text-align: left;
 }
 .evaluation .item .compulsory .title .required {
   display: inline-block;
