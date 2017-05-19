@@ -216,6 +216,12 @@ div.scaleDesc {
   clear: both;
 }
 
+ul.breadCrumb:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
 .navIntraTool .breadCrumb {
   margin: 0;
   float: left;
