@@ -117,7 +117,16 @@ public class GroupMembershipSyncImpl implements GroupMembershipSync {
 								buf.append(" using api");
 								LOG.debug(buf.toString());
 							}
-							this.evaluationSetupService.synchronizeUserAssignments(eval.getId(), null);
+							try {
+								this.evaluationSetupService.synchronizeUserAssignments(eval.getId(), null);
+							} catch(IllegalStateException e) {
+								StringBuilder buf = new StringBuilder();
+								buf.append("Unable to user assignments for eval (");
+								buf.append(eval.getId());
+								buf.append(") due to IllegalStateException: ");
+								buf.append(e.getMessage());
+								LOG.warn(buf.toString());
+							}
 						}
 					}
 				}
