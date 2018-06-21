@@ -258,7 +258,8 @@ public class EvalBeanUtils {
 
         calendar.setTime( now );
         if (eval.getStartDate() == null) {
-            eval.setStartDate(now);
+            calendar.add(Calendar.HOUR, 1);
+            eval.setStartDate(calendar.getTime());
             log.debug("Setting start date to default of: " + eval.getStartDate());
         } else {
             calendar.setTime(eval.getStartDate());
@@ -484,9 +485,13 @@ public class EvalBeanUtils {
         }
         boolean useDateTime = ((Boolean) settings.get(EvalSettings.EVAL_USE_DATE_TIME));
 
+        Calendar calendar = new GregorianCalendar();
         Date now = new Date();
+        calendar.setTime( now );
         if (eval.getStartDate() == null) {
-            eval.setStartDate( now );
+            calendar.add(Calendar.HOUR, 1);
+            eval.setStartDate(calendar.getTime());
+            log.debug("Setting start date to default of: " + eval.getStartDate());
         }
 
         if (eval.getStartDate().after( now ) ) {
