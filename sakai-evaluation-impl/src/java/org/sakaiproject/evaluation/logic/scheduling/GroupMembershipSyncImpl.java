@@ -124,7 +124,7 @@ public class GroupMembershipSyncImpl implements GroupMembershipSync {
 								buf.append(eval.getId());
 								buf.append(") due to IllegalStateException: ");
 								buf.append(e.getMessage());
-								LOG.warn(buf.toString());
+								log.warn(buf.toString());
 							}
 						}
 					}
