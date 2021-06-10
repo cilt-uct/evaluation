@@ -310,11 +310,8 @@ public class EvaluationSettingsProducer extends EvalCommonProducer implements Vi
         }
 
         // Evaluation section awareness checkbox
-        if (((Boolean) settings.get(EvalSettings.DISPLAY_HIERARCHY_OPTIONS)).booleanValue()) {
-            UIBranchContainer fieldSetSectionAwareness = UIBranchContainer.make(form, "fieldSetSectionAwareness:");
-            UIBranchContainer enableSectionAware = UIBranchContainer.make( form, "sectionAwareness:" );
-            UIBoundBoolean.make( enableSectionAware, "sectionAwareness", evaluationOTP + "sectionAwareness" );
-        }
+        UIBranchContainer enableSectionAware = UIBranchContainer.make( form, "sectionAwareness:" );
+        UIBoundBoolean.make( enableSectionAware, "sectionAwareness", evaluationOTP + "sectionAwareness" );
 
         // EVALUATION RESULTS VIEWING/SHARING
 
